@@ -4,17 +4,22 @@ public class Demo {
         Demo.withdraw(logFile);
         Demo.deposit(logFile);
         Demo.transfer(logFile);
+
+        Demo.withdraw("suspcioustransaction.log");
     }
 
     public static void withdraw(String logFile) {
-        Logger.getLogger(logFile).write("Processed withdrawal.");
+        final Logger logger = Logger.getLogger(logFile);
+        logger.write("Processed withdrawal (" + logger.toString() + ")");
     }
 
     public static void deposit(String logFile) {
-        Logger.getLogger(logFile).write("Processed deposit.");
+        final Logger logger = Logger.getLogger(logFile);
+        logger.write("Processed deposit (" + logger.toString() + ")");
     }
 
     public static void transfer(String logFile) {
-        Logger.getLogger(logFile).write("Processed transfer.");
+        final Logger logger = Logger.getLogger(logFile);
+        logger.write("Processed transfer (" + logger.toString() + ")");
     }
 }
